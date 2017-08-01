@@ -31,6 +31,11 @@ String
 let text = "Say 'Hello'"; // "" === ''
 let text = 'Say "Hello"'; // '' === ""
 ```
+Undefined
+```javascript
+var data; // its value is undefined
+var data = undefined;
+```
 ## Template Literals (ES6)
 
 Multiline
@@ -44,4 +49,16 @@ Variables inside
 var name = 'World';
 var greeting = `Hello ${name}`; // template literal support variables inside of text
 ```
+## Objects
 
+Object
+```javascript
+var myObject = { property: "value" }; // JSON Object
+var myObject = new Object({ property: "value" }); // new instance of object
+```
+Arrays
+```javascript
+var myArray = []; // Array is an Object
+var myArray = new Array(); // new instance of Array
+var myArray = [1, 2, 3, 4]; // Array init
+```
