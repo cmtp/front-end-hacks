@@ -16,13 +16,32 @@ const PI = 3.14 // constant
 
 ## Data Types
 
-number
+Number
 ```javascript
 let myInt = 5; // number
 let myDec = 10.5 // number
 ```
-boolean
+Boolean
 ```javascript
 let yes = true;
 let no = false;
 ```
+String
+```javascript
+let text = "Say 'Hello'"; // "" === ''
+let text = 'Say "Hello"'; // '' === ""
+```
+## Template Literals (ES6)
+
+Multiline
+```javascript
+var text = `This is a template literal`;
+var paragraph = `This is a
+    new paragraph`; // template literal support multiline
+```
+Variables inside
+```javascript
+var name = 'World';
+var greeting = `Hello ${name}`; // template literal support variables inside of text
+```
+
