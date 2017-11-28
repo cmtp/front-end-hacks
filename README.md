@@ -32,3 +32,45 @@ nav a, button {
 }
 ```
 - Apply first mobile, start development with the smallest screen and end with the largest screen, this is a good practice and help to improve in performance
+
+## Media queries
+- Media quieres are your friend!
+- Add media queries:
+
+1. First option. use media attribute into html (many small files and many http requests)
+
+```html
+<link rel="stylesheet" media="screen and (min-width:320px)" href="mobile.css">
+<link rel="stylesheet" media="screen and (min-width:768px)" href="tablet.css">
+<link rel="stylesheet" media="screen and (min-width:1024px)" href="desktop.css">
+```
+
+2. Use @media into css code (big files and few http requests)
+```css
+
+@media screen and (min-width:320px) {
+    // mobile
+}
+@media screen and (min-width:768px) {
+    // tablet
+}
+@media screen and (min-width:1024px) {
+    // desktop
+}
+```
+
+3. use @import (not recommendded for performance)
+
+```css
+@import url("mobile.css") only screen and (min-width:320px);
+```
+
+- Use <code>max-width</code> and <code>min-width</code> instead of <code>max-device-width</code> and <code>min-device-width</code> in media queries
+- Pick breakpoints for media queries acordding to the content of application
+- We can apply complex media queries like this:
+
+```css
+@media only screen and (min-width:500px) and (max-width:600px) {
+    // css content
+}
+```
