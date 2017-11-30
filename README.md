@@ -392,3 +392,6 @@ nav a, button {
     line-height: 1.2em;
 }
 ```
+## Minor Breackpoints
+
+- Use minor Breackpoint for little changes that need refinements.
