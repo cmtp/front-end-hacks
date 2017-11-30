@@ -376,6 +376,19 @@ nav a, button {
 ## Fonts
 - Measure: the length of a line of text, use measures as a factor for picking breackpoints
 - Ideal Measure: 45 - 90 characters per line (65cpl is recommended)
-- base font: .goodFonts {font-size: 16px; line-height: 1.2em;}
-- biggerFonts { font-size: 18px;line-hieght: 1.25em;}
-- smallFonts { font-size: 14px; line-height: 1.2em;}
+```css
+/* Base font */
+.goodFonts {
+    font-size: 16px; line-height: 1.2em;
+}
+/* Bigger font */
+.biggerFonts { 
+    font-size: 18px;
+    line-height: 1.25em;
+}
+/* Smaller font*/
+.smallFonts { 
+    font-size: 14px; 
+    line-height: 1.2em;
+}
+```
