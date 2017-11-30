@@ -99,3 +99,48 @@ nav a, button {
 -   Use <code>flex-wrap: wrap</code> in the <code>.container</code> style for wrap the content to the next line
 - Use <code>order</code> style in the container's child for apply order for the elements FI: <code>order: 1</code>
 - Use width on percentage
+
+## Responsive Patterns
+
+### Mostly Fliud
+
+### Layout Shifter
+
+### Column Drop
+
+![alt text](img/column-drop.svg "Column Drop")
+
+```html
+<style type="css">
+    .container {
+        display:flex;
+        flex-wrap: wrap;
+    }
+    .box {
+        width:100%;
+    }
+    @media screen and (min-width: 450px) {
+        .dark-blue {
+            width:25%;
+        }
+        .light-blue {
+            width:75%;
+        }
+    }
+    @media screen and (min-width: 550px) {
+        .dark-blue, green {
+            width:25%;
+        }
+        .light-blue {
+            width:50%;
+        }
+    }
+</style>
+<div class="container">
+    <div class="box dark_blue"></div>
+    <div class="box light_blue"></div>
+    <div class="box green"></div>
+</div>
+```
+
+### Off Canvas
