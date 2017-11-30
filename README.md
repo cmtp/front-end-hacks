@@ -1,8 +1,11 @@
-# front-end-hacks
+# Frontend-Hacks
+
 ## Tools
 - chrome developer tools
 - [visual studio code](https://code.visualstudio.com/)
 - [Udacity Feedback Chrome Extension](https://github.com/udacity/frontend-grading-engine)
+
+# Responsive Web Design Fundamentals
 
 ## Web Mobile First Concepts
 - Viewport size - Defines the area of the screen that the browser render content too.
@@ -395,3 +398,5 @@ nav a, button {
 ## Minor Breackpoints
 
 - Use minor Breackpoint for little changes that need refinements.
+
+# Responsive Images
