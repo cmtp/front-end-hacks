@@ -104,14 +104,106 @@ nav a, button {
 
 ### Mostly Fliud
 
+![alt text](img/mostly-fluid.svg "Mostly Fluid")
+
+```html
+<style type="text/css">
+    .container {
+        display:flex;
+        flex-wrap: wrap;
+    }
+    .box {
+        width:100%;
+    }
+    @media screen and (min-width: 450px) {
+        .light-blue, .green {
+            width:50%;
+        }
+    }
+    @media screen and (min-width: 550px) {
+        .dark-blue, .light-blue {
+            width:50%;
+        }
+        .green, .red, .orange {
+            width:33.333333%;
+        }
+    }
+    @media screen and (min-width: 700px) {
+        .container {
+            width:700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+</style>
+<div class="container">
+    <div class="box dark_blue"></div>
+    <div class="box light_blue"></div>
+    <div class="box green"></div>
+    <div class="box red"></div>
+    <div class="box orange"></div>
+</div>
+```
+
 ### Layout Shifter
+
+![alt text](img/layout-shifter.svg "Layout Shifter")
+
+```html
+<style type="text/css">
+    .container {
+        width: 100%;
+        display:flex;
+        flex-wrap: wrap;
+    }
+    .box {
+        width:100%;
+    }
+    @media screen and (min-width: 500px) {
+        .dark-blue {
+            width:50%;
+        }
+        #container2 {
+            width:50%;
+        }
+    }
+    @media screen and (min-width: 600px) {
+        .dark-blue {
+            width:25%;
+            order: 1;
+        }
+        #container2 {
+            width:50px;
+        }
+        .red {
+            width:25%;
+            order: -1;
+        }
+    }
+    @media screen and (min-width: 700px) {
+        .container {
+            width:700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+</style>
+<div class="container">
+    <div class="box dark_blue"></div>
+    <div class="container" id="container2">
+        <div class="box light_blue"></div>
+        <div class="box green"></div>
+    </div>
+    <div class="box red"></div>
+</div>
+```
 
 ### Column Drop
 
 ![alt text](img/column-drop.svg "Column Drop")
 
 ```html
-<style type="css">
+<style type="text/css">
     .container {
         display:flex;
         flex-wrap: wrap;
@@ -128,7 +220,7 @@ nav a, button {
         }
     }
     @media screen and (min-width: 550px) {
-        .dark-blue, green {
+        .dark-blue, .green {
             width:25%;
         }
         .light-blue {
@@ -144,3 +236,146 @@ nav a, button {
 ```
 
 ### Off Canvas
+
+![alt text](img/off-canvas.svg "Column Drop")
+
+```html
+<style type="text/css">
+    html, body, main {
+        height: 100%;
+        width: 100%;
+    }
+    nav {
+        width: 300px;
+        height: 100%;
+        position: absolute;
+        transform: translate(-300px, 0);
+        transition: transform 0.3 ease;
+    }
+    nav.open {
+        transform: translate(0, 0);
+    }
+
+    @media screen and (min-width: 600px) {
+        nav {
+            position: relative;
+            transform: translate(0, 0);
+        }
+        body {
+            display: flex;
+            flex-flow: row nowrap;
+        }
+        main {
+            width: auto;
+            flex-grow: 1;
+        }
+    }
+</style>
+<nav id="drawer" class="dark-blue"></nav>
+<main class="light-blue"></main>
+<script>
+    menu.addEventListener('click', function (e) {
+        drawer.classList.toogle('open');
+        e.stopPropagation();
+    })
+</script>
+```
+
+## Responsive tables
+
+### Hidden Columns
+
+```html
+<style type="text/css">
+    .longName, .inning {
+        display: none;
+    }
+</style>
+<table>
+    <tr>
+        <td>
+            <span class="shortName">TOR</span>
+            <span class="longName">Toronto Blue Jays</span>
+        </td>
+        <td class="inning">0</td>
+        <td class="inning">0</td>
+        <td class="inning">0</td>
+        <td class="inning">0</td>
+        <td class="inning">0</td>
+        <td class="inning">0</td>
+        <td class="inning">4</td>
+        <td class="inning">0</td>
+        <td class="inning">1</td>
+        <td class="inning">0</td>
+        <td class="inning">0</td>
+        <td class="inning">0</td>
+        <td class="final">5</td>        
+    </tr>
+</table>
+```
+
+### No More Tables
+
+```html
+<style type="text/css">
+    @media screen and (max-width:500px) {
+        table, thead, tbody, th, td, tr {
+            display: block;
+        }
+        thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        td {
+            position: relative;
+            padding-left: 50%;
+        }
+        td:before {
+            position: absolute;
+            left: 6px;
+            content: attr(data-th);
+            font-weight: bold;
+        }
+    }
+</style>
+<table>
+    <!-- some content of the table -->
+    <tr>
+        <td data-th="Team">Toronto</td>
+        <td data-th="1st">0</td>
+        <td data-th="2nd">0</td>
+        <td data-th="3rd">0</td>
+        <td data-th="4th">0</td>
+        <td data-th="5th">0</td>
+        <td data-th="6th">0</td>
+        <td data-th="7th">4</td>
+        <td data-th="8th">0</td>
+        <td data-th="9th">1</td>
+        <td data-th="Final">5</td>      
+    </tr>
+</table>
+```
+
+### Contained scrolling
+
+```html
+<style>
+    div.container-table {
+        width: 100%;
+        overflow-x: auto;
+    }
+</style>
+<div class="container-table">
+    <table>
+    <!-- table content -->
+    </table>
+</div>
+```
+
+## Fonts
+- Measure: the length of a line of text, use measures as a factor for picking breackpoints
+- Ideal Measure: 45 - 90 characters per line (65cpl is recommended)
+- base font: .goodFonts {font-size: 16px; line-height: 1.2em;}
+- biggerFonts { font-size: 18px;line-hieght: 1.25em;}
+- smallFonts { font-size: 14px; line-height: 1.2em;}
