@@ -74,3 +74,28 @@ nav a, button {
     // css content
 }
 ```
+
+## Flexbox
+- Flexbox is one of the most powerfull tools for the layout
+```html
+<!-- styles -->
+<style>
+.container {
+    width:100%;
+    display: flex;
+}
+.box {
+    width: 150px;
+}
+</style>
+<!-- html -->
+<div class="container">
+    <div class="box dark_blue"></div>
+    <div class="box light_blue"></div>
+    <div class="box green"></div>
+</div>
+```
+
+-   Use <code>flex-wrap: wrap</code> in the <code>.container</code> style for wrap the content to the next line
+- Use <code>order</code> style in the container's child for apply order for the elements FI: <code>order: 1</code>
+- Use width on percentage
