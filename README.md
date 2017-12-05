@@ -400,3 +400,9 @@ nav a, button {
 - Use minor Breackpoint for little changes that need refinements.
 
 # Responsive Images
+- Natural size is the original size for img
+- For debug images natural size:
+    1. Go to chrome developer tools
+    2. Select the tag img that we need to debug in element section
+    3. in the console fill <code>$0.naturalWidth</code> for show the natural width associated to this img.
+- 
