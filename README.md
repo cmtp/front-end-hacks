@@ -405,4 +405,48 @@ nav a, button {
     1. Go to chrome developer tools
     2. Select the tag img that we need to debug in element section
     3. in the console fill <code>$0.naturalWidth</code> for show the natural width associated to this img.
-- 
+- Total Bits = Pixels * Bits per pixel
+- Less pixels * Better Compression = Less bytes
+
+## Resizing images
+- Use <code>max-width: 100%</code> for responsive images
+- For relative sizing use:
+```css
+img {
+    width: 50%;
+}
+```
+- For add a margin between 2 images use:
+```css
+img {
+    margin-right: 10px;
+    max-width: 426px;
+    width: calc((100% - 10px)/2);
+}
+img: last-of-type {
+    margin-right: 0;
+}
+```
+- Use Calc property in order to apply calculations with css values
+### Viewports lengths
+- 1 vh (Viewport Height) unit corresponds 1% to the viewport height
+- 1 vw (Viewport Width) corresponds to 1% of the viewport width
+```css
+img {
+    height: 100vh;
+    width: 100vw;
+}
+```
+- 1 vmin is 1% of the smallest side
+- 1 vmax is 1% of the largest side
+
+```css
+img {
+    height: 100vmin;
+    width: 100vmin;
+}
+video {
+    height: 100vmax;
+    width: 100vmax;
+}
+```
