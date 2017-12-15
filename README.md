@@ -450,3 +450,7 @@ video {
     width: 100vmax;
 }
 ```
+## Raster vs Vector
+- Use JPEG or WEBP (if it's supported) format for photographics imgages.
+- Use SVG images or PNG format for images that need transparent images, logos, etc.
+- Try to avoid use PNG if you can!
